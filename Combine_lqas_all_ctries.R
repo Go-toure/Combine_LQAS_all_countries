@@ -11,7 +11,7 @@ library(ggplot2)
 
 
 #read_all_files
-list_of_files <- list.files(paste0("C:/Users/TOURE/Mes documents/REPOSITORIES/LQAS_raw_data/LCB_level1/"), recursive = T, full.names = T)
+list_of_files <- list.files(paste0("C:/Users/TOURE/Mes documents/REPOSITORIES/LQAS_raw_data/LQAS_level1/"), recursive = T, full.names = T)
 #lapply()
 list_of_files
 A <- lapply(list_of_files, function(x){read_csv(x)}) |> 
@@ -31,7 +31,7 @@ LQAS_fin<-A |>
   )) |> 
   arrange(start_date)
 
-write_csv(LQAS_fin,"C:/Users/TOURE/Mes documents/REPOSITORIES/LQAS_raw_data/LCB_LQAS_data.csv")
+write_csv(LQAS_fin,"C:/Users/TOURE/Mes documents/REPOSITORIES/LQAS_raw_data/AFRO_LQAS_data.csv")
 
 
 # write_csv(LQAS_fin,"C:/Users/TOURE/Mes documents/REPOSITORIES/LQAS_raw_data/AFRO_LQAS.csv")
