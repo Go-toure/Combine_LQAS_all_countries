@@ -28,7 +28,10 @@ LQAS_fin<-A |>
   mutate(response = case_when(
     response == "NIE-2024_nOPV2"~ "NIE-2024-nOPV2",
     TRUE~ response
-  )) |> 
+  )) |>
+  mutate(numbercluster = as.numeric(numbercluster)) |> 
+  filter(numbercluster >= 3,
+         numbercluster !=18) |> 
   arrange(start_date)
 
 write_csv(LQAS_fin,"C:/Users/TOURE/Mes documents/REPOSITORIES/LQAS_raw_data/AFRO_LQAS_data.csv")
